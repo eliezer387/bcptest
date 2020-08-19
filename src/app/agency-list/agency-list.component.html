@@ -1,0 +1,21 @@
+<app-loading *ngIf="isLoading"></app-loading>
+
+
+<app-dashboard *ngIf="!isLoading">
+  <div class="list-group" *ngFor="let agency of agencies">
+    <a href="#" class="list-group-item list-group-item-action">
+      <div>
+        <fa-icon icon="car"></fa-icon>
+      </div>
+      <b>
+        {{agency.agencia}}
+      </b>
+      <div>
+        {{agency.distrito}}
+      </div>
+      <div>
+        {{agency.direccion}}
+      </div>
+    </a>
+  </div>
+</app-dashboard>
