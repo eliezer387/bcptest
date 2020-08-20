@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, AfterViewChecked } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShareAgencyService } from '../../share-agency.service';
 import agencias from '../../data/agencias.json';
 import { IAgency } from '../../models/agency.model';
@@ -9,13 +9,12 @@ import { Router } from '@angular/router';
   templateUrl: './agency-list.component.html',
   styleUrls: ['./agency-list.component.scss']
 })
-export class AgencyListComponent implements OnInit, AfterViewChecked {
+export class AgencyListComponent implements OnInit {
   isLoading = true;
   agencies = [];
   constructor(
     private agencyService: ShareAgencyService,
     private router: Router,
-    private changeDetector: ChangeDetectorRef
   ) {
   }
 
@@ -39,10 +38,6 @@ export class AgencyListComponent implements OnInit, AfterViewChecked {
       this.setStorageData();
       this.getStorageData();
     }
-  }
-
-  ngAfterViewChecked(): void {
-    this.changeDetector.detectChanges();
   }
 
   goDetails(agency: IAgency): void {
