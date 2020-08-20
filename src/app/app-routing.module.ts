@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AgencyListComponent } from './agency-list/agency-list.component';
-import { LoadingComponent } from './loading/loading.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { AgencyListComponent } from './components/agency-list/agency-list.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AgencyDetailsComponent } from './components/agency-details/agency-details.component';
 
 const routes: Routes = [
   {
@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: '',
     component: AgencyListComponent,
+  },
+  {
+    path: 'details',
+    component: AgencyDetailsComponent,
   }
 ];
 
