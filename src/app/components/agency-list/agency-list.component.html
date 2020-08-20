@@ -9,8 +9,9 @@
     <div class="list-group" *ngFor="let agency of agencies">
       <div class="row">
         <div class="col-1 border rounded-circle item-icon">
-          <!-- <fa-icon icon="car" size="3x"></fa-icon> -->
-          <img src="assets/icons/{{randomIcon()}}.svg" alt="" />
+          <svg class="bi" width="32" height="32" fill="currentColor">
+            <use xlink:href="bootstrap-icons.svg#shop"/>
+          </svg>
         </div>
         <div class="col-11">
           <a href="javascript:void(0)" class="list-group-item list-group-item-action" (click)="goDetails(agency)">
