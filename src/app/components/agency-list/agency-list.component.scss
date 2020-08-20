@@ -3,8 +3,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 24px;
 }
 
 .list-header {
   padding: 20px 20px 10px 20px;
+}
+
+.list-row {
+  display: flex;
+  flex-direction: row;
+  justify-items: left;
+}
+
+.item-text {
+  padding-left: 8px;
 }

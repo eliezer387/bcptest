@@ -33,7 +33,9 @@ export class AgencyListComponent implements OnInit {
   getStorageData(): void {
     const data = localStorage.getItem('data');
     if (data) {
-      this.agencies = JSON.parse(data);
+      const agencies = JSON.parse(data);
+      agencies.forEach((item, i ) => { item.img = this.randomIcon(); } );
+      this.agencies = agencies;
     } else {
       this.setStorageData();
       this.getStorageData();
@@ -46,10 +48,9 @@ export class AgencyListComponent implements OnInit {
   }
 
   randomIcon(): string {
-    const icons = ['suit-club', 'star', 'star-fill', 'heart', 'heart-fill', 'alt', 'calendar-month', 'file-person', 'file-person-fill'];
+    const icons = ['suit-club', 'star', 'star-fill', 'heart', 'heart-fill', 'alt', 'calendar-month', 'file-person', 'shop', 'file-person-fill'];
     const iconName = icons[Math.floor(Math.random() * icons.length)];
-
-    return iconName;
+    return `bootstrap-icons.svg#${iconName}`;
   }
 
 }
