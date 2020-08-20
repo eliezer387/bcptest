@@ -11,13 +11,13 @@ const routes: Routes = [
   {
     path: 'agencias',
     loadChildren:
-    () => import('./components/agency-list/agency-list.module').then(m => m.AgencyListModule)
+    () => import('./views/agency-list/agency-list.module').then(m => m.AgencyListModule)
   },
 
   {
     path: 'details',
     loadChildren:
-    () => import('./components/agency-details/agency-details.module').then(m => m.AgencyDetailsModule)
+    () => import('./views/agency-details/agency-details.module').then(m => m.AgencyDetailsModule)
   }
 ];
 
